@@ -11,26 +11,30 @@ public class KitalalosJatek {
     }
 
     private static void kirak() {
-        int lapok[] = new int[24];
-        int szam = 1;
-        for (int i = 0; i < lapok.length; i++) {
-            lapok[i] = szam;
-            szam++;
-            System.out.println(lapok[i]+" ");
+        String lapok[] = new String[22];
+        String szinek[] = {"P", "T", "Z", "M"};
+        String[] ertekek = {"Asz", "Kir", "Fel", "X", "IX", "VII"};
+        for (int i = 0; i < 22; i++) {
+            for (int j = 0; j < szinek.length; j++) {
+                for (int k = 0; k < ertekek.length; k++) {
+                    lapok[i] = ertekek[k]+szinek[j];
+                    System.out.print(lapok[i]+" ");
+                }
+            }
         }
        
     }
 
     private static void melyik() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
 
     private static void kever() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
 
     private static void eredmeny() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
     }
     
 }
