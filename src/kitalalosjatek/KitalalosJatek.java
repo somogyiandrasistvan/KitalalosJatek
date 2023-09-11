@@ -1,5 +1,7 @@
 package kitalalosjatek;
 
+import java.util.Scanner;
+
 public class KitalalosJatek {
 
     public static void main(String[] args) {
@@ -10,25 +12,33 @@ public class KitalalosJatek {
     }
 
     private static void kirak() {
-        String lapok[] = new String[22];
+        String lapok[] = new String[21];
         String szinek[] = {"P", "T", "Z", "M"};
-        String[] ertekek = {"Asz", "Kir", "Fel", "X", "IX", "VII"};
-        int i = 0;
-        for (String szinek1 : szinek) {
-            for (String ertekek1 : ertekek) {
-                lapok[i] = ertekek1 + szinek1;
-                i++;
+        String[] ertekek = {"Asz", "Kir", "Fel", "X", "IX", "XIII"};
+        int index = 0;
+        for (String szin : szinek) {
+            for (int e = 0; index < 21 && e < ertekek.length; e++) {
+                lapok[index++] = szin + "_" + ertekek[e];
             }
         }
-        
-        for (String lap : lapok) {
-            System.out.println(lap);
+        for (int i = 0; i < lapok.length; i++) {
+            if (i % 3 == 0) {
+                System.out.println("");
+            }
+            System.out.print(lapok[i] + "  ");
         }
-
     }
 
     private static void melyik() {
-
+        System.out.println("");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("melyik oszlop (1-3): ");
+        int szam = sc.nextInt();
+        while (szam < 1 || szam > 3) {
+            System.out.print("melyik oszlop (1-3): ");
+            int szam2 = sc.nextInt();
+            szam = szam2;
+        }
     }
 
     private static void kever() {
