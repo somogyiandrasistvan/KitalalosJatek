@@ -1,10 +1,10 @@
-
 package kitalalosjatekk;
 
+import java.util.Scanner;
 
 public class KitalalosJatekk {
 
-   public static void main(String[] args) {
+    public static void main(String[] args) {
         kirak();
         melyik();
         kever();
@@ -18,12 +18,12 @@ public class KitalalosJatekk {
         int index = 0;
         for (String szin : szinek) {
             for (String ertek : ertekek) {
-                lapok[index] = szin +"_"+ ertek;
+                lapok[index] = szin + "_" + ertek;
                 index++;
             }
         }
         for (int i = 0; i < lapok.length; i++) {
-            if(i % 3 == 0){
+            if (i % 3 == 0) {
                 System.out.println("");
             }
             System.out.print(lapok[i] + "  ");
@@ -31,7 +31,15 @@ public class KitalalosJatekk {
     }
 
     private static void melyik() {
-
+        System.out.println("");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("melyik oszlop (1-3): ");
+        int szam = sc.nextInt();
+        while (szam < 1 || szam > 3) {
+            System.out.print("melyik oszlop (1-3): ");
+            int szam2 = sc.nextInt();
+            szam = szam2;
+        }
     }
 
     private static void kever() {
@@ -43,4 +51,3 @@ public class KitalalosJatekk {
     }
 
 }
-
