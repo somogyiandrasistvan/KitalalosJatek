@@ -19,22 +19,22 @@ public class KitalalosJatek {
         for (String szin : szinek) {
             for (int e = 0; index < 21 && e < ertekek.length; e++) {
                 lapok[index++] = szin + "_" + ertekek[e];
+
             }
-        }
-        for (int i = 0; i < lapok.length; i++) {
-            if (i % 3 == 0) {
-                System.out.println("");
+            for (int i = 0; i < lapok.length; i++) {
+                if (i % 3 == 0) {
+                    System.out.println("");
+                }
+                System.out.print(lapok[i] + "  ");
             }
-            System.out.print(lapok[i] + "  ");
         }
     }
 
     private static void melyik() {
-        System.out.println("");
         Scanner sc = new Scanner(System.in);
-        System.out.print("melyik oszlop (1-3): ");
+        System.out.print("meik oszlop (1-3): ");
         int szam = sc.nextInt();
-        while (szam < 1 || szam > 3) {
+        while (szam < 0 || szam > 3) {
             System.out.print("melyik oszlop (1-3): ");
             int szam2 = sc.nextInt();
             szam = szam2;
