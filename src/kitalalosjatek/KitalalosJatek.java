@@ -13,21 +13,21 @@ public class KitalalosJatek {
     }
 
     private static String[] kirak() {
-        String lapok[] = new String[21];
+        String lapok[] = new String[22];
         String szinek[] = {"P", "T", "Z", "M"};
         String[] ertekek = {"Asz", "Kir", "Fel", "X", "IX", "XIII"};
-        int index = 0;
+        int index = 1;
         for (String szin : szinek) {
-            for (int e = 0; index < 21 && e < ertekek.length; e++) {
+            for (int e = 0; index < 22 && e < ertekek.length; e++) {
                 lapok[index++] = szin + "_" + ertekek[e];
 
             }
         }
-        for (int i = 0; i < lapok.length; i++) {
+        for (int i = 1; i < lapok.length; i++) {
+            System.out.printf("%-8s", lapok[i]);
             if (i % 3 == 0) {
                 System.out.println("");
             }
-            System.out.printf("%-8s", lapok[i]);
         }
 
         return lapok;
@@ -47,24 +47,34 @@ public class KitalalosJatek {
     }
 
     private static void kever(int szam, String[] lapok) {
-        
+
         switch (szam) {
             case 3:
-            harmadikOszlop(lapok);
+                harmadikOszlop(lapok);
         }
     }
 
     private static void harmadikOszlop(String[] lapok) {
-        int sorTores = 1;
-        for (int i = 1; i < 7; i++) {
+        String[] csereLapok = new String[lapok.length];
+        int szamol = 1;
+
+        for (int i = 1; i < 8; i++) {
             int index = 20 - (i - 1) * 3;
-            index = index - 3;
-            System.out.printf("%-8s", lapok[index]);
-            if (sorTores % 3 == 0) {
+            csereLapok[szamol] = lapok[index];
+
+            index = 21 - (i - 1) * 3;
+            csereLapok[szamol + 7] = lapok[index];
+
+            index = 19 - (i - 1) * 3;
+            csereLapok[szamol + 14] = lapok[index];
+            szamol++;
+        }
+
+        for (int i = 1; i < csereLapok.length; i++) {
+            System.out.printf("%-8s", csereLapok[i]);
+            if (i % 3 == 0) {
                 System.out.println("");
             }
-            sorTores++;
-            
         }
     }
 
