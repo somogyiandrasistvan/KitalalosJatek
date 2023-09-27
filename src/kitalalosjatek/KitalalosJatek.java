@@ -78,6 +78,7 @@ public class KitalalosJatek {
         pakli = ujPakli;
     }
 
+    
     private static void ezVolt() {
         System.out.println("A választott lap: " + pakli[11]);
     }
